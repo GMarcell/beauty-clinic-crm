@@ -1,0 +1,7 @@
+import Link from "next/link";
+import { prisma } from "@/lib/prisma";
+
+export default async function CustomersPage() {
+  const customers = await prisma.customer.findMany({ orderBy: { name: "asc" }, take: 100, include: { appointments: { orderBy: { scheduledAt: "desc" }, take: 1 } } });
+  return <div className="space-y-6"><div className="flex items-center justify-between"><div><h1 className="text-2xl font-bold">Customers</h1><p className="text-sm text-slate-500">Digital customer database.</p></div><Link href="/customers/new" className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white">+ Add customer</Link></div><div className="overflow-hidden rounded-xl border bg-white"><table className="w-full text-left text-sm"><thead className="bg-slate-50"><tr><th className="px-5 py-3">Name</th><th className="px-5 py-3">WhatsApp</th><th className="px-5 py-3">Last appointment</th></tr></thead><tbody className="divide-y">{customers.map((customer) => <tr key={customer.id} className="hover:bg-slate-50"><td className="px-5 py-4"><Link href={`/customers/${customer.id}`} className="font-medium hover:underline">{customer.name}</Link></td><td className="px-5 py-4">{customer.phone}</td><td className="px-5 py-4 text-slate-500">{customer.appointments[0] ? customer.appointments[0].scheduledAt.toLocaleDateString() : "—"}</td></tr>)}</tbody></table>{customers.length === 0 && <p className="p-8 text-center text-sm text-slate-500">No customers yet.</p>}</div></div>;
+}
