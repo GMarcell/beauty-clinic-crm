@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { IconPackage } from "@/components/icons";
+import { CustomerPicker } from "@/components/customer-picker";
 import { PageHeader } from "@/components/ui";
 
 async function createPackage(formData: FormData) {
@@ -67,25 +68,12 @@ export default async function NewPackagePage({
 
         <form action={createPackage} className="space-y-5 p-6">
           <div>
-            <label htmlFor="customerId" className="text-sm font-semibold text-slate-700">
+            <label htmlFor="customer-search" className="text-sm font-semibold text-slate-700">
               Customer <span className="text-brand-500">*</span>
             </label>
-            <select
-              id="customerId"
-              name="customerId"
-              required
-              defaultValue={customerParam ?? ""}
-              className={inputClass}
-            >
-              <option value="" disabled>
-                Select customer…
-              </option>
-              {customers.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name} ({c.phone})
-                </option>
-              ))}
-            </select>
+            <div className="mt-2">
+              <CustomerPicker customers={customers} defaultValue={customerParam} />
+            </div>
           </div>
 
           <div>

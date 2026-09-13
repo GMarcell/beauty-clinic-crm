@@ -70,8 +70,9 @@ A counter badge shows how many customers to contact.
 
 How a customer "buys" a service — a package links them together:
 
-- Pick the **customer** (pre-selected when arriving from a profile via
-  `?customer=<id>`), the **service**, **total sessions**, and **price**.
+- Pick the **customer** via a searchable combobox (type to filter by name or
+  phone; pre-selected when arriving from a profile via `?customer=<id>`), the
+  **service**, **total sessions**, and **price**.
 - Purchase date defaults to today when left blank.
 - On save, the customer's profile shows the new package with a progress bar
   (0 of N sessions done) and the purchase feeds the Follow-ups logic — the
