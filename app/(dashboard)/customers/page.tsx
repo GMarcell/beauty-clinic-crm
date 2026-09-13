@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { IconPlus, IconWhatsApp } from "@/components/icons";
+import { IconPackage, IconPlus, IconWhatsApp } from "@/components/icons";
 import { Avatar, Badge, Card, EmptyState, PageHeader } from "@/components/ui";
 import { createWhatsAppLink } from "@/lib/whatsapp";
 
@@ -18,13 +18,22 @@ export default async function CustomersPage() {
         title="Customers"
         description="Your digital customer database."
         action={
-          <Link
-            href="/customers/new"
-            className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lift transition-all duration-200 hover:from-brand-600 hover:to-brand-700"
-          >
-            <IconPlus width={16} height={16} className="transition-transform duration-200 group-hover:rotate-90" />
-            Add customer
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/packages/new"
+              className="inline-flex items-center gap-2 rounded-xl bg-white/85 px-4 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-brand-100 shadow-soft transition-all hover:bg-brand-50 active:scale-[0.98]"
+            >
+              <IconPackage width={16} height={16} className="text-brand-500" />
+              Record purchase
+            </Link>
+            <Link
+              href="/customers/new"
+              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lift transition-all duration-200 hover:from-brand-600 hover:to-brand-700"
+            >
+              <IconPlus width={16} height={16} className="transition-transform duration-200 group-hover:rotate-90" />
+              Add customer
+            </Link>
+          </div>
         }
       />
 

@@ -31,6 +31,7 @@ export type CustomerMinAggregateOutputType = {
   phone: string | null
   dateOfBirth: Date | null
   gender: $Enums.Gender | null
+  customMessage: string | null
   notes: string | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -43,6 +44,7 @@ export type CustomerMaxAggregateOutputType = {
   phone: string | null
   dateOfBirth: Date | null
   gender: $Enums.Gender | null
+  customMessage: string | null
   notes: string | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -55,6 +57,7 @@ export type CustomerCountAggregateOutputType = {
   phone: number
   dateOfBirth: number
   gender: number
+  customMessage: number
   notes: number
   createdAt: number
   updatedAt: number
@@ -69,6 +72,7 @@ export type CustomerMinAggregateInputType = {
   phone?: true
   dateOfBirth?: true
   gender?: true
+  customMessage?: true
   notes?: true
   createdAt?: true
   updatedAt?: true
@@ -81,6 +85,7 @@ export type CustomerMaxAggregateInputType = {
   phone?: true
   dateOfBirth?: true
   gender?: true
+  customMessage?: true
   notes?: true
   createdAt?: true
   updatedAt?: true
@@ -93,6 +98,7 @@ export type CustomerCountAggregateInputType = {
   phone?: true
   dateOfBirth?: true
   gender?: true
+  customMessage?: true
   notes?: true
   createdAt?: true
   updatedAt?: true
@@ -178,6 +184,7 @@ export type CustomerGroupByOutputType = {
   phone: string
   dateOfBirth: Date | null
   gender: $Enums.Gender | null
+  customMessage: string | null
   notes: string | null
   createdAt: Date
   updatedAt: Date
@@ -211,6 +218,7 @@ export type CustomerWhereInput = {
   phone?: Prisma.StringFilter<"Customer"> | string
   dateOfBirth?: Prisma.DateTimeNullableFilter<"Customer"> | Date | string | null
   gender?: Prisma.EnumGenderNullableFilter<"Customer"> | $Enums.Gender | null
+  customMessage?: Prisma.StringNullableFilter<"Customer"> | string | null
   notes?: Prisma.StringNullableFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
@@ -227,6 +235,7 @@ export type CustomerOrderByWithRelationInput = {
   phone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrderInput | Prisma.SortOrder
+  customMessage?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -246,6 +255,7 @@ export type CustomerWhereUniqueInput = Prisma.AtLeast<{
   phone?: Prisma.StringFilter<"Customer"> | string
   dateOfBirth?: Prisma.DateTimeNullableFilter<"Customer"> | Date | string | null
   gender?: Prisma.EnumGenderNullableFilter<"Customer"> | $Enums.Gender | null
+  customMessage?: Prisma.StringNullableFilter<"Customer"> | string | null
   notes?: Prisma.StringNullableFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
@@ -262,6 +272,7 @@ export type CustomerOrderByWithAggregationInput = {
   phone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrderInput | Prisma.SortOrder
+  customMessage?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -280,6 +291,7 @@ export type CustomerScalarWhereWithAggregatesInput = {
   phone?: Prisma.StringWithAggregatesFilter<"Customer"> | string
   dateOfBirth?: Prisma.DateTimeNullableWithAggregatesFilter<"Customer"> | Date | string | null
   gender?: Prisma.EnumGenderNullableWithAggregatesFilter<"Customer"> | $Enums.Gender | null
+  customMessage?: Prisma.StringNullableWithAggregatesFilter<"Customer"> | string | null
   notes?: Prisma.StringNullableWithAggregatesFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Customer"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Customer"> | Date | string
@@ -291,6 +303,7 @@ export type CustomerCreateInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -307,6 +320,7 @@ export type CustomerUncheckedCreateInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -321,6 +335,7 @@ export type CustomerUpdateInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -337,6 +352,7 @@ export type CustomerUncheckedUpdateInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -352,6 +368,7 @@ export type CustomerCreateManyInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -363,6 +380,7 @@ export type CustomerUpdateManyMutationInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -375,6 +393,7 @@ export type CustomerUncheckedUpdateManyInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -397,6 +416,7 @@ export type CustomerCountOrderByAggregateInput = {
   phone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrder
   gender?: Prisma.SortOrder
+  customMessage?: Prisma.SortOrder
   notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -409,6 +429,7 @@ export type CustomerMaxOrderByAggregateInput = {
   phone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrder
   gender?: Prisma.SortOrder
+  customMessage?: Prisma.SortOrder
   notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -421,6 +442,7 @@ export type CustomerMinOrderByAggregateInput = {
   phone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrder
   gender?: Prisma.SortOrder
+  customMessage?: Prisma.SortOrder
   notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -529,6 +551,7 @@ export type CustomerCreateWithoutClinicInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -543,6 +566,7 @@ export type CustomerUncheckedCreateWithoutClinicInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -587,6 +611,7 @@ export type CustomerScalarWhereInput = {
   phone?: Prisma.StringFilter<"Customer"> | string
   dateOfBirth?: Prisma.DateTimeNullableFilter<"Customer"> | Date | string | null
   gender?: Prisma.EnumGenderNullableFilter<"Customer"> | $Enums.Gender | null
+  customMessage?: Prisma.StringNullableFilter<"Customer"> | string | null
   notes?: Prisma.StringNullableFilter<"Customer"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Customer"> | Date | string
@@ -598,6 +623,7 @@ export type CustomerCreateWithoutPackagesInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -613,6 +639,7 @@ export type CustomerUncheckedCreateWithoutPackagesInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -642,6 +669,7 @@ export type CustomerUpdateWithoutPackagesInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -657,6 +685,7 @@ export type CustomerUncheckedUpdateWithoutPackagesInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -670,6 +699,7 @@ export type CustomerCreateWithoutTreatmentsInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -685,6 +715,7 @@ export type CustomerUncheckedCreateWithoutTreatmentsInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -714,6 +745,7 @@ export type CustomerUpdateWithoutTreatmentsInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -729,6 +761,7 @@ export type CustomerUncheckedUpdateWithoutTreatmentsInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -742,6 +775,7 @@ export type CustomerCreateWithoutAppointmentsInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -757,6 +791,7 @@ export type CustomerUncheckedCreateWithoutAppointmentsInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -786,6 +821,7 @@ export type CustomerUpdateWithoutAppointmentsInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -801,6 +837,7 @@ export type CustomerUncheckedUpdateWithoutAppointmentsInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -814,6 +851,7 @@ export type CustomerCreateManyClinicInput = {
   phone: string
   dateOfBirth?: Date | string | null
   gender?: $Enums.Gender | null
+  customMessage?: string | null
   notes?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -825,6 +863,7 @@ export type CustomerUpdateWithoutClinicInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -839,6 +878,7 @@ export type CustomerUncheckedUpdateWithoutClinicInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -853,6 +893,7 @@ export type CustomerUncheckedUpdateManyWithoutClinicInput = {
   phone?: Prisma.StringFieldUpdateOperationsInput | string
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumGenderFieldUpdateOperationsInput | $Enums.Gender | null
+  customMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -914,6 +955,7 @@ export type CustomerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   phone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
+  customMessage?: boolean
   notes?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -931,6 +973,7 @@ export type CustomerSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   phone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
+  customMessage?: boolean
   notes?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -944,6 +987,7 @@ export type CustomerSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   phone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
+  customMessage?: boolean
   notes?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -957,12 +1001,13 @@ export type CustomerSelectScalar = {
   phone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
+  customMessage?: boolean
   notes?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type CustomerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "clinicId" | "name" | "phone" | "dateOfBirth" | "gender" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["customer"]>
+export type CustomerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "clinicId" | "name" | "phone" | "dateOfBirth" | "gender" | "customMessage" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["customer"]>
 export type CustomerInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   clinic?: boolean | Prisma.ClinicDefaultArgs<ExtArgs>
   packages?: boolean | Prisma.Customer$packagesArgs<ExtArgs>
@@ -992,6 +1037,7 @@ export type $CustomerPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     phone: string
     dateOfBirth: Date | null
     gender: $Enums.Gender | null
+    customMessage: string | null
     notes: string | null
     createdAt: Date
     updatedAt: Date
@@ -1428,6 +1474,7 @@ export interface CustomerFieldRefs {
   readonly phone: Prisma.FieldRef<"Customer", 'String'>
   readonly dateOfBirth: Prisma.FieldRef<"Customer", 'DateTime'>
   readonly gender: Prisma.FieldRef<"Customer", 'Gender'>
+  readonly customMessage: Prisma.FieldRef<"Customer", 'String'>
   readonly notes: Prisma.FieldRef<"Customer", 'String'>
   readonly createdAt: Prisma.FieldRef<"Customer", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Customer", 'DateTime'>

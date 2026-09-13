@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconBell, IconCalendar, IconPackage, IconSparkles, IconUsers } from "./icons";
+import { IconBell, IconCalendar, IconMegaphone, IconPackage, IconSparkles, IconUsers } from "./icons";
 import { cn } from "./ui";
 
 const links = [
@@ -10,6 +10,7 @@ const links = [
   { label: "Customers", href: "/customers", Icon: IconUsers },
   { label: "Appointments", href: "/appointments", Icon: IconCalendar },
   { label: "Follow-ups", href: "/follow-ups", Icon: IconBell },
+  { label: "Broadcast", href: "/broadcast", Icon: IconMegaphone },
   { label: "Services", href: "/services", Icon: IconPackage },
 ];
 

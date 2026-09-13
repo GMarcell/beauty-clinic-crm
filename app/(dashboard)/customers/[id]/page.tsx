@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { createWhatsAppLink } from "@/lib/whatsapp";
-import { IconCalendar, IconClock, IconPackage, IconWhatsApp } from "@/components/icons";
+import { buildCustomerMessage, createWhatsAppLink } from "@/lib/whatsapp";
+import { IconCalendar, IconClock, IconPackage, IconPlus, IconWhatsApp } from "@/components/icons";
+import { CustomerMessageCard } from "@/components/customer-message-card";
 import { Badge, Card, EmptyState, PageHeader } from "@/components/ui";
 
 export default async function CustomerPage({ params }: { params: Promise<{ id: string }> }) {
@@ -36,7 +38,7 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-brand-100">Sessions done</p>
               </div>
               <a
-                href={createWhatsAppLink(customer.phone, `Hi ${customer.name} 👋`)}
+                href={createWhatsAppLink(customer.phone, buildCustomerMessage(customer))}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-bold text-brand-600 shadow-md transition-all hover:bg-brand-50 active:scale-[0.98]"
@@ -76,6 +78,13 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
               <IconPackage width={18} height={18} />
             </span>
             <h2 className="text-lg font-bold tracking-tight text-slate-900">Active packages</h2>
+            <Link
+              href={`/packages/new?customer=${customer.id}`}
+              className="ml-auto inline-flex items-center gap-1.5 rounded-xl bg-brand-50 px-3 py-1.5 text-xs font-bold text-brand-600 ring-1 ring-brand-100 transition-all hover:bg-brand-100 active:scale-[0.98]"
+            >
+              <IconPlus width={14} height={14} />
+              Record purchase
+            </Link>
           </div>
           <div className="mt-5 space-y-4">
             {customer.packages.map((pkg) => {
@@ -144,6 +153,25 @@ export default async function CustomerPage({ params }: { params: Promise<{ id: s
           )}
         </Card>
       </div>
+
+      {/* Custom message */}
+      <Card className="p-6">
+        <div className="flex items-center gap-2">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 text-emerald-500">
+            <IconWhatsApp width={18} height={18} />
+          </span>
+          <div>
+            <h2 className="text-lg font-bold tracking-tight text-slate-900">WhatsApp message</h2>
+            <p className="text-sm text-slate-500">Saved template for this customer — edit, save, and send.</p>
+          </div>
+        </div>
+        <div className="mt-5 max-w-2xl">
+          <CustomerMessageCard
+            customer={{ id: customer.id, name: customer.name, phone: customer.phone }}
+            savedTemplate={customer.customMessage ?? "Hi {name} 👋"}
+          />
+        </div>
+      </Card>
 
       {/* Treatment history */}
       <Card className="p-6">

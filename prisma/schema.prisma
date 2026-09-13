@@ -51,13 +51,14 @@ model User {
 }
 
 model Customer {
-  id           String             @id @default(cuid())
-  clinicId     String
-  name         String
-  phone        String
-  dateOfBirth  DateTime?
-  gender       Gender?
-  notes        String?
+  id             String             @id @default(cuid())
+  clinicId       String
+  name           String
+  phone          String
+  dateOfBirth    DateTime?
+  gender         Gender?
+  customMessage  String?
+  notes          String?
   clinic       Clinic             @relation(fields: [clinicId], references: [id], onDelete: Cascade)
   packages     Package[]
   appointments Appointment[]

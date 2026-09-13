@@ -126,3 +126,22 @@ export function IconScissors(props: IconProps) {
     </svg>
   );
 }
+
+export function IconSend(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M22 2L11 13" />
+      <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+    </svg>
+  );
+}
+
+export function IconMegaphone(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M3 10v4a1 1 0 0 0 1 1h2l4 4V5L6 9H4a1 1 0 0 0-1 1z" transform="rotate(90 12 12)" />
+      <path d="M15 5.5a7.5 7.5 0 0 1 0 13" />
+      <path d="M18 3a11 11 0 0 1 0 18" />
+    </svg>
+  );
+}

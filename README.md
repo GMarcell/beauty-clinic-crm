@@ -40,6 +40,16 @@ pnpm dev
 
 Open http://localhost:3000
 
+Full documentation lives in [`docs/`](./docs):
+
+| Doc                                              | Contents                                    |
+| ------------------------------------------------ | ------------------------------------------- |
+| [Getting started](./docs/getting-started.md)     | Setup, env vars, scripts, seeding           |
+| [Architecture](./docs/architecture.md)           | Stack, project layout, conventions          |
+| [Data model](./docs/data-model.md)               | Schema, ERD, business rules                 |
+| [Features](./docs/features.md)                   | Page-by-page guide, WhatsApp flow           |
+| [API reference](./docs/api.md)                   | REST endpoints                              |
+
 ## Demo data
 
 The seed creates:
@@ -62,7 +72,11 @@ The seed creates:
 - Appointments
 - Follow-up detection
 - WhatsApp deep links
+- Per-customer custom messages
+- Promo broadcast (personalized, manually sent)
 - Services
+
+See [Features](./docs/features.md) for details on each.
 
 ## Deliberately not included yet
 
